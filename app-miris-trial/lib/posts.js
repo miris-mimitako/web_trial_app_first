@@ -4,6 +4,13 @@ import matter from 'gray-matter'
 
 const postsDirectory = path.join(process.cwd(), './pages/posts') // This cannot be worked public document.
 
+export async function getSortedPostsData() {
+      // Instead of the file system,
+    // fetch post data from an external API endpoint
+    const res = await fetch('..')
+    return res.json()
+}
+
 export function getSortedPostsData() {
   // Get file names under /posts
     const fileNames = fs.readdirSync(postsDirectory)
