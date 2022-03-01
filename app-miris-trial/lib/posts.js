@@ -1,6 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
+// import someDatabaseSDK from 'someDatabaseSDK'
 
 const postsDirectory = path.join(process.cwd(), './pages/posts') // This cannot be worked public document.
 
