@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "remark-html": "^15.0.1"
+  }
+}
