@@ -5,23 +5,20 @@ import { getSortedPostsData } from '../lib/posts'
 import Link from 'next/link'
 import Date from '../components/date'
 
-
-export async function getStaticProps() {
-  const allPostsData = getSortedPostsData()
-  return {props: {allPostsData}}
-}
-
 export default function Home({ allPostsData }) {
-  
   return (
     <Layout home>
       <Head>
         <title>{siteTitle}</title>
       </Head>
       <section className={utilStyles.headingMd}>
-        <p>[Your Self Introduction]</p>
         <p>
-          (This is a sample website - youll be building a site like this on{' '}
+          Hello, I’m <strong>Shu</strong>. I’m a software engineer and a
+          translator (English/Japanese). You can contact me on{' '}
+          <a href="https://twitter.com/chibicode">Twitter</a>.
+        </p>
+        <p>
+          (This is a sample website - you’ll be building a site like this in{' '}
           <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
         </p>
       </section>
@@ -38,7 +35,6 @@ export default function Home({ allPostsData }) {
                 <Date dateString={date} />
               </small>
             </li>
-
           ))}
         </ul>
       </section>
@@ -46,7 +42,11 @@ export default function Home({ allPostsData }) {
   )
 }
 
-
-
-// learn:
-// Link uses Link tag not use a tag. An a tag indicates link word.
+export async function getStaticProps() {
+  const allPostsData = getSortedPostsData()
+  return {
+    props: {
+      allPostsData
+    }
+  }
+}
